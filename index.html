@@ -1,0 +1,2730 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio PPG | Hudan Ezra'alana Praja, S.Pd</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* === VARIABEL WARNA (Modern Classic) === */
+        :root {
+            --batik-dark: #0B1F3B;
+            --batik-brown: #2F2F2F;
+            --batik-mid: #8A8F98;
+            --batik-gold: #B08D57;
+            --batik-gold-hover: #9C7A48;
+            --batik-cream: #F4EFE6;
+            --batik-card-bg: #FFFFFF;
+            --text-dark: #2F2F2F;
+            --text-muted: #8A8F98;
+            --text-light: #F4EFE6;
+            --nav-height: 80px;
+            --shadow-subtle: 0 10px 30px rgba(11, 31, 59, 0.05);
+            --shadow-hover: 0 20px 40px rgba(176, 141, 87, 0.15);
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        /* === RESET & BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--nav-height);
+        }
+
+        /* === BASE & TYPOGRAPHY BARU === */
+        body {
+            background-color: var(--batik-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            /* Dirapatkan sedikit */
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            /* Font paragraf modern & rapi */
+            overflow-x: hidden;
+            font-size: 15px;
+            /* Mengecilkan teks dasar agar rapi */
+        }
+
+        h1,
+        h2,
+        h3,
+        .logo,
+        .filosofi-number,
+        .quote-text,
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            /* Font judul modern dan bersih */
+        }
+
+        /* === PENYESUAIAN UKURAN FONT (LEBIH RAPI) === */
+        .hero h1 {
+            font-size: 2.8rem;
+            /* Jauh lebih kecil dari 3.8rem sebelumnya */
+            margin: 0.5rem 0 1rem;
+            color: #ffffff;
+            font-weight: 600;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            animation: slideInDown 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            /* Diperkecil dari 3rem */
+            color: var(--batik-dark);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .profile-text h3 {
+            font-size: 1.8rem;
+        }
+
+        .footer-content h2 {
+            font-size: 2.2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            /* Diperkecil dari 1.25rem */
+            color: #E0E0E0;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .card:hover .card-title {
+            color: var(--batik-gold);
+            /* Interaksi warna saat card di-hover */
+        }
+
+        /* === ANIMASI TEKS BARU === */
+        /* Animasi gradien berjalan untuk teks yang di-highlight (Nama di Hero) */
+        @keyframes gradientText {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero h1 span {
+            background: linear-gradient(270deg, var(--batik-gold), #FFF8DC, var(--batik-gold-hover));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 4s ease infinite;
+            display: inline-block;
+        }
+
+        /* Animasi masuk dari bawah ke atas */
+        @keyframes slideInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animasi masuk dari atas ke bawah */
+        @keyframes slideInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Menerapkan urutan animasi di bagian Hero agar tidak membosankan */
+        .hero-greeting {
+            animation: slideInDown 0.8s ease-out forwards;
+        }
+
+        .hero-subtitle {
+            animation: slideInUp 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-desc {
+            animation: slideInUp 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            animation: slideInUp 0.8s ease-out 0.6s forwards;
+            opacity: 0;
+        }
+
+        /* === ANIMATIONS (Scroll Reveal) === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal.delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal.delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal.delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* === BACKGROUND IMAGE UMM === */
+        .batik-pattern {
+            background-color: var(--batik-dark);
+            background-image: linear-gradient(rgba(11, 31, 59, 0.65), rgba(11, 31, 59, 0.75)), url('assets/images/Background umm.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-light);
+        }
+
+        .batik-pattern-light {
+            background-color: var(--batik-cream);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230b1f3b' fill-opacity='0.02'%3E%3Cpath d='M30 30c0-16.569 13.431-30 30-30H0c16.569 0 30 13.431 30 30zM30 30C30 46.569 16.569 60 0 60h60c-16.569 0-30-13.431-30-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* === NAVBAR === */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: transparent;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        header.scrolled {
+            background: rgba(11, 31, 59, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(176, 141, 87, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--batik-gold);
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo span {
+            color: var(--text-light);
+            font-family: 'Cinzel', serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.8rem;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--batik-gold);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--batik-gold);
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--batik-gold);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 7rem 5% 4rem;
+            position: relative;
+        }
+
+        .glass-box {
+            background: transparent;
+            padding: 2rem;
+            max-width: 900px;
+            width: 100%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-greeting {
+            color: var(--batik-gold);
+            letter-spacing: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            border-bottom: 1px solid rgba(176, 141, 87, 0.4);
+            padding-bottom: 6px;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            margin: 0.5rem 0 1rem;
+            color: #ffffff;
+            font-weight: 500;
+            line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero h1 span {
+            color: var(--batik-gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #E0E0E0;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: #dcdcdc;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.85rem 2.2rem;
+            background: linear-gradient(135deg, var(--batik-gold), var(--batik-gold-hover));
+            color: var(--batik-dark);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(176, 141, 87, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: all 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 25px rgba(176, 141, 87, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border-color: #ffffff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* === SECTION UMUM === */
+        section {
+            padding: 7rem 8%;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            color: var(--batik-gold);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            position: relative;
+        }
+
+        .section-badge::before,
+        .section-badge::after {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 1px;
+            background: rgba(176, 141, 87, 0.5);
+            vertical-align: middle;
+            margin: 0 15px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--batik-dark);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* === PROFIL SECTION === */
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 6rem;
+            flex-wrap: wrap;
+            background: transparent;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+        }
+
+        .profile-img-wrapper {
+            flex: 1;
+            min-width: 320px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .profile-img-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: 15px;
+            bottom: 15px;
+            border: 1px solid var(--batik-gold);
+            border-radius: var(--radius-lg);
+            z-index: 0;
+            transition: all 0.5s ease;
+        }
+
+        .profile-img-wrapper:hover::before {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(176, 141, 87, 0.05);
+        }
+
+        .profile-img-wrapper img {
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            position: relative;
+            z-index: 1;
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.5s ease;
+        }
+
+        .profile-img-wrapper img:hover {
+            transform: translateY(-8px);
+        }
+
+        .profile-text {
+            flex: 1.5;
+            min-width: 320px;
+        }
+
+        .profile-text h3 {
+            color: var(--batik-dark);
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-role {
+            color: var(--batik-gold);
+            font-weight: 400;
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .profile-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.85;
+            font-weight: 300;
+        }
+
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: var(--batik-card-bg);
+            padding: 1.8rem 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(176, 141, 87, 0.15);
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--batik-gold);
+        }
+
+        .stat-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .stat-card p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--batik-dark);
+            margin: 0;
+        }
+
+        /* === ARTIFAK PEMBELAJARAN === */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: var(--batik-card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(176, 141, 87, 0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(176, 141, 87, 0.3);
+        }
+
+        .card-img-container {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+            filter: brightness(0.95);
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.06);
+            filter: brightness(1);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(11, 31, 59, 0.85);
+            backdrop-filter: blur(6px);
+            color: var(--text-light);
+            font-size: 0.75rem;
+            font-weight: 400;
+            padding: 6px 14px;
+            border-radius: 30px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-content {
+            padding: 2.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: var(--batik-dark);
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+        }
+
+        .card-desc {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--batik-gold);
+            color: var(--batik-gold);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            cursor: pointer;
+            background: transparent;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-outline:hover {
+            background: var(--batik-gold);
+            color: var(--batik-dark);
+            box-shadow: 0 5px 15px rgba(176, 141, 87, 0.2);
+        }
+
+        /* === MODEL GURU SECTION === */
+        .model-guru-wrapper {
+            background: var(--batik-card-bg);
+            border-radius: var(--radius-lg);
+            padding: 4.5rem;
+            box-shadow: var(--shadow-subtle);
+            border: 1px solid rgba(176, 141, 87, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .model-guru-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(176, 141, 87, 0.03) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .model-guru-img {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .model-guru-img img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 50px rgba(11, 31, 59, 0.1);
+            transition: transform 0.6s ease;
+        }
+
+        .model-guru-img img:hover {
+            transform: scale(1.02);
+        }
+
+        .model-guru-text {
+            flex: 1.5;
+            min-width: 320px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-box {
+            position: relative;
+            padding: 0.25rem 0 0.25rem 2rem;
+            border-left: 3px solid var(--batik-gold);
+            margin-bottom: 3rem;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            font-weight: 400;
+            color: var(--batik-gold);
+            font-size: 1.05rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .guru-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .pillar-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 1.2rem 1.5rem;
+            background: transparent;
+            border-radius: 12px;
+            border: 1px solid rgba(176, 141, 87, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .pillar-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--batik-gold);
+            background: rgba(176, 141, 87, 0.02);
+            box-shadow: 0 8px 20px rgba(176, 141, 87, 0.08);
+        }
+
+        .pillar-item i {
+            color: var(--batik-gold);
+            font-size: 1.3rem;
+        }
+
+        .pillar-item span {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--batik-dark);
+            letter-spacing: 0.5px;
+        }
+
+        /* === ANALISIS SECTION === */
+        .analisis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .analisis-card {
+            background: var(--batik-card-bg);
+            padding: 3rem 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-subtle);
+            border-top: 2px solid rgba(176, 141, 87, 0.5);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .analisis-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-top-color: var(--batik-gold);
+        }
+
+        .analisis-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(176, 141, 87, 0.08);
+            color: var(--batik-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .analisis-card:hover .analisis-icon {
+            background: var(--batik-gold);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .analisis-card h3 {
+            color: var(--batik-dark);
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+        }
+
+        .analisis-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        /* === FILOSOFI MENGAJAR SECTION === */
+        .filosofi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .filosofi-card {
+            background: var(--batik-card-bg);
+            padding: 3.5rem 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-subtle);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(176, 141, 87, 0.1);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .filosofi-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(176, 141, 87, 0.4);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .filosofi-number {
+            position: absolute;
+            top: -15px;
+            right: 15px;
+            font-size: 7rem;
+            font-weight: 700;
+            color: rgba(176, 141, 87, 0.04);
+            line-height: 1;
+            pointer-events: none;
+            transition: color 0.4s;
+        }
+
+        .filosofi-card:hover .filosofi-number {
+            color: rgba(176, 141, 87, 0.08);
+        }
+
+        .filosofi-card h3 {
+            color: var(--batik-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 1px;
+        }
+
+        .filosofi-card p {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.85;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+
+        /* === GALERI SECTION === */
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .galeri-item {
+            position: relative;
+            height: 300px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .galeri-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: brightness(0.9);
+        }
+
+        .galeri-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(1.05);
+        }
+
+        .galeri-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(11, 31, 59, 0.9) 0%, rgba(11, 31, 59, 0.2) 60%, transparent 100%);
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            transition: opacity 0.5s ease;
+        }
+
+        .galeri-item:hover .galeri-overlay {
+            opacity: 1;
+        }
+
+        .galeri-overlay h4 {
+            color: var(--batik-gold);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Cinzel', serif;
+        }
+
+        .galeri-overlay p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        /* === FOOTER (KONTAK) === */
+        footer {
+            padding: 7rem 8% 4rem;
+            position: relative;
+            border-top: 1px solid rgba(176, 141, 87, 0.2);
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-content h2 {
+            color: var(--batik-gold);
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            font-family: 'Cinzel', serif;
+        }
+
+        .footer-content p {
+            color: #dcdcdc;
+            font-size: 1.1rem;
+            margin-bottom: 3.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 1.2rem 2.2rem;
+            border-radius: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-badge i {
+            color: var(--batik-gold);
+            font-size: 1.4rem;
+            transition: transform 0.4s ease;
+        }
+
+        .contact-badge:hover {
+            background: var(--batik-gold);
+            color: var(--batik-dark);
+            transform: translateY(-6px);
+            border-color: var(--batik-gold);
+            box-shadow: 0 15px 30px rgba(176, 141, 87, 0.25);
+        }
+
+        .contact-badge:hover i {
+            color: var(--batik-dark);
+            transform: scale(1.1);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2.5rem;
+            font-size: 0.95rem;
+            color: #a0a0a0;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* === MODAL POPUP SYSTEM === */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 31, 59, 0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--batik-card-bg);
+            width: 100%;
+            max-width: 700px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(176, 141, 87, 0.2);
+            animation: modalScale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes modalScale {
+            from {
+                transform: scale(0.95) translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            padding: 2rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(176, 141, 87, 0.1);
+            background: var(--batik-cream);
+        }
+
+        .modal-header h3 {
+            color: var(--batik-dark);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            background: rgba(176, 141, 87, 0.1);
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--batik-dark);
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: #d32f2f;
+            color: #fff;
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 2.5rem;
+            overflow-y: auto;
+        }
+
+        .modal-body p {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+            font-weight: 300;
+            font-size: 1.05rem;
+        }
+
+        .modal-body .detail-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .modal-body .detail-list li {
+            padding: 1rem 0;
+            border-bottom: 1px dashed rgba(176, 141, 87, 0.2);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        .modal-body .detail-list li i {
+            color: var(--batik-gold);
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+
+        .modal-footer {
+            padding: 1.5rem 2.5rem;
+            background: var(--batik-cream);
+            border-top: 1px solid rgba(176, 141, 87, 0.1);
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .lightbox-img-wrapper {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .lightbox-img-wrapper img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        /* === RESPONSIVE STYLING === */
+        @media (max-width: 992px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav ul li a {
+                font-size: 0.85rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: var(--nav-height);
+                left: 0;
+                width: 100%;
+                background: rgba(11, 31, 59, 0.98);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                padding: 2rem 0;
+                gap: 1rem;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+                border-bottom: 1px solid rgba(176, 141, 87, 0.2);
+                transform: translateY(-150%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+
+            nav ul.show {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .glass-box {
+                padding: 1rem;
+            }
+
+            .profile-container,
+            .model-guru-wrapper {
+                padding: 2.5rem 1.5rem;
+                gap: 3.5rem;
+            }
+
+            section {
+                padding: 5rem 5%;
+            }
+
+            .section-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        /* === MUSIC PLAYER FLOATING === */
+        #music-player {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .music-card {
+            background: rgba(11, 31, 59, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(176, 141, 87, 0.35);
+            border-radius: 20px;
+            width: 300px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(176, 141, 87, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-origin: bottom right;
+        }
+
+        .music-card.collapsed {
+            opacity: 0;
+            transform: scale(0.85) translateY(10px);
+            pointer-events: none;
+        }
+
+        .music-card-header {
+            padding: 16px 18px 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(176, 141, 87, 0.12);
+        }
+
+        .music-album-art {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--batik-gold), #C4A25A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .music-album-art .vinyl-spin {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: none;
+        }
+
+        .music-album-art .vinyl-spin.playing {
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .music-track-info {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .music-track-name {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            letter-spacing: 0.3px;
+        }
+
+        .music-track-artist {
+            font-size: 0.72rem;
+            color: var(--batik-gold);
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .music-card-controls {
+            padding: 14px 18px;
+        }
+
+        .music-progress-wrap {
+            margin-bottom: 12px;
+        }
+
+        .music-progress-bar {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 3px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.12);
+            outline: none;
+            cursor: pointer;
+            transition: height 0.2s;
+        }
+
+        .music-progress-bar:hover {
+            height: 5px;
+        }
+
+        .music-progress-bar::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--batik-gold);
+            cursor: pointer;
+            box-shadow: 0 0 6px rgba(176, 141, 87, 0.6);
+        }
+
+        .music-time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.67rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 5px;
+        }
+
+        .music-btn-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .music-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+        }
+
+        .music-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .music-btn.play-pause {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--batik-gold), var(--batik-gold-hover));
+            color: #fff;
+            border-radius: 50%;
+            font-size: 1.05rem;
+            box-shadow: 0 6px 18px rgba(176, 141, 87, 0.35);
+        }
+
+        .music-btn.play-pause:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 22px rgba(176, 141, 87, 0.5);
+            background: linear-gradient(135deg, #C4A25A, var(--batik-gold));
+        }
+
+        .music-volume-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .music-volume-row i {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.78rem;
+            flex-shrink: 0;
+        }
+
+        .music-volume {
+            -webkit-appearance: none;
+            appearance: none;
+            flex: 1;
+            height: 3px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.12);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .music-volume::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.55);
+            cursor: pointer;
+        }
+
+        .music-playlist {
+            max-height: 140px;
+            overflow-y: auto;
+            border-top: 1px solid rgba(176, 141, 87, 0.12);
+            padding: 6px 0;
+        }
+
+        .music-playlist::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .music-playlist::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .music-playlist::-webkit-scrollbar-thumb {
+            background: rgba(176, 141, 87, 0.3);
+            border-radius: 2px;
+        }
+
+        .playlist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 18px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-radius: 0;
+        }
+
+        .playlist-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .playlist-item.active {
+            background: rgba(176, 141, 87, 0.12);
+        }
+
+        .playlist-item .track-num {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.25);
+            width: 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .playlist-item.active .track-num {
+            color: var(--batik-gold);
+        }
+
+        .playlist-item .track-details {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .playlist-item .track-title {
+            font-size: 0.76rem;
+            color: rgba(255, 255, 255, 0.75);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .playlist-item.active .track-title {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .playlist-item .track-dur {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.25);
+            flex-shrink: 0;
+        }
+
+        /* Toggle button */
+        .music-toggle-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--batik-dark), #1a3a6b);
+            border: 1.5px solid rgba(176, 141, 87, 0.5);
+            color: var(--batik-gold);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(176, 141, 87, 0.15);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .music-toggle-btn:hover {
+            transform: scale(1.1);
+            border-color: var(--batik-gold);
+            box-shadow: 0 10px 30px rgba(176, 141, 87, 0.3);
+        }
+
+        .music-toggle-btn .music-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1.5px solid var(--batik-gold);
+            animation: none;
+            opacity: 0;
+        }
+
+        .music-toggle-btn.is-playing .music-pulse {
+            animation: pulse-ring 1.8s ease-out infinite;
+            opacity: 1;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1.7);
+                opacity: 0;
+            }
+        }
+
+        .music-equalizer {
+            display: flex;
+            gap: 2px;
+            align-items: flex-end;
+            height: 14px;
+            margin-left: 3px;
+        }
+
+        .eq-bar {
+            width: 3px;
+            background: var(--batik-gold);
+            border-radius: 2px;
+            animation: none;
+            height: 3px;
+        }
+
+        .music-toggle-btn.is-playing .eq-bar:nth-child(1) {
+            animation: eq1 0.6s ease-in-out infinite alternate;
+        }
+
+        .music-toggle-btn.is-playing .eq-bar:nth-child(2) {
+            animation: eq2 0.5s ease-in-out 0.1s infinite alternate;
+        }
+
+        .music-toggle-btn.is-playing .eq-bar:nth-child(3) {
+            animation: eq3 0.7s ease-in-out 0.2s infinite alternate;
+        }
+
+        @keyframes eq1 {
+            from {
+                height: 3px;
+            }
+
+            to {
+                height: 12px;
+            }
+        }
+
+        @keyframes eq2 {
+            from {
+                height: 5px;
+            }
+
+            to {
+                height: 14px;
+            }
+        }
+
+        @keyframes eq3 {
+            from {
+                height: 3px;
+            }
+
+            to {
+                height: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header id="main-header">
+        <a href="#beranda" class="logo" id="nav-logo">
+            Portofolio</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Menu Navigasi">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+                <li><a href="#profil" class="nav-link">Profil</a></li>
+                <li><a href="#artifak" class="nav-link">Artifak Pembelajaran</a></li>
+                <li><a href="#model-guru" class="nav-link">Model Guru</a></li>
+                <li><a href="#analisis" class="nav-link">Analisis</a></li>
+                <li><a href="#filosofi" class="nav-link">Filosofi Mengajar</a></li>
+                <li><a href="#galeri" class="nav-link">Galeri</a></li>
+                <li><a href="#kontak" class="nav-link">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= 1. BERANDA ================= -->
+    <section id="beranda" class="hero batik-pattern">
+        <div class="glass-box">
+            <div class="hero-greeting">Sugeng Rawuh</div>
+            <h1>Hudan Ezra'alana Praja, <span>S.Pd</span></h1>
+            <p class="hero-subtitle">Mahasiswa PPG Calon Guru 2026 | Praktik Pengalaman Lapangan</p>
+            <p class="hero-desc">
+                Portofolio digital refleksi dan artifak pembelajaran selama PPL sebagai mahasiswa PPG Prajabatan 2026.
+            </p>
+            <div class="hero-buttons">
+                <a href="#artifak" class="btn">
+                    <i class="fa-solid fa-book-open"></i> Lihat Artifak Saya
+                </a>
+                <a href="#profil" class="btn btn-secondary">
+                    <i class="fa-solid fa-user"></i> Mengenal Saya
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 2. PROFIL ================= -->
+    <section id="profil">
+        <div class="section-header">
+            <span class="section-badge">Tentang Saya</span>
+            <h2 class="section-title">Profil Pendidik</h2>
+            <p class="section-subtitle">Perjalanan menjadi guru profesional yang berkompeten dan berkarakter.</p>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-img-wrapper">
+                <img src="assets/images/foto bg biru.png" alt="Foto Profil Hudan Ezra'alana Praja">
+            </div>
+            <div class="profile-text">
+                <h3>Halo, Saya Hudan</h3>
+                <div class="profile-role">
+                    <i class="fa-solid fa-graduation-cap"></i> Pendidik Masa Depan | Kota Malang, Jawa Timur
+                </div>
+                <p>
+                    Saya lahir dan bertumbuh di Kota Malang, sebuah kota yang berhawa sejuk diapit bentang pegunungan
+                    dan tersohor sebagai Kota Pendidikan di Indonesia. Keunikan karakter masyarakat yang memiliki jiwa
+                    solidaritas tinggi, tangguh, dan pantang menyerah menjadi pondasi nilai yang saya bawa dalam dunia
+                    pendidikan.
+                </p>
+                <p>
+                    Visi saya adalah mendidik generasi muda Indonesia agar memiliki karakter luhur, berpikir kritis,
+                    bernalar kreatif, serta siap menghadapi tantangan masa depan melalui pembelajaran yang bermakna,
+                    berpusat pada murid (<em>student-centered</em>), dan menyenangkan.
+                </p>
+
+                <div class="profile-stats">
+                    <div class="stat-card">
+                        <h4>Lokasi PPL</h4>
+                        <p>SDN Dinoyo 1 Kota Malang</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Fokus Inovasi</h4>
+                        <p>Media Pembelajaran & PjBL-STEM</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>LPTK</h4>
+                        <p>Universitas Muhammadiyah Malang</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3. ARTIFAK PEMBELAJARAN ================= -->
+    <section id="artifak" class="batik-pattern-light">
+        <div class="section-header">
+            <span class="section-badge">Karya & Praktik</span>
+            <h2 class="section-title">Artifak Pembelajaran</h2>
+            <p class="section-subtitle">Kumpulan dokumen perencanaan, media ajar, dan instrumen asesmen pembelajaran
+                PPL.</p>
+        </div>
+
+        <div class="portfolio-grid">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="assets/images/Cover RPP.png" alt="Modul Ajar" class="card-img">
+                    <span class="card-badge">Perencanaan</span>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Rancangan Modul Ajar (PjBL)</h3>
+                        <p class="card-desc">Pengembangan modul ajar berbasis PjBL STEM untuk meningkatkan keterampilan
+                            murid.</p>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1t8t-JEfHBLE7MyliIY8xjsBM6JyLPrie?usp=sharing"
+                        target="_blank" rel="noopener noreferrer" class="btn-outline" style="text-decoration: none;">
+                        <i class="fa-solid fa-file-lines"></i> Lihat Bukti Dokumen
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="assets/images/Media.jpeg" alt="Video Pembelajaran" class="card-img">
+                    <span class="card-badge">Video Pembelajaran</span>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Video Pembelajaran</h3>
+                        <p class="card-desc">Arsip video kegiatan pembelajaran selama PPL di SDN Dinoyo 1 Malang.</p>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1GIK1wZz9LZ2yQSFohEqsptD_3_hKLpue?usp=drive_link"
+                        target="_blank" rel="noopener noreferrer" class="btn-outline" style="text-decoration: none;">
+                        <i class="fa-solid fa-video"></i> Lihat Video Pembelajaran
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="assets/images/Jurnal Refleksi.jpeg" alt="Asesmen & Evaluasi" class="card-img">
+                    <span class="card-badge">Penilaian Praktik</span>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Penilaian Praktik</h3>
+                        <p class="card-desc">Jurnal refleksi dan penilaian kegiatan praktik mengajar setiap siklus.</p>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1RyjJhXQmbf5i1kHHdBE9QFLRx-lB6bRw?usp=sharing"
+                        target="_blank" rel="noopener noreferrer" class="btn-outline" style="text-decoration: none;">
+                        <i class="fa-solid fa-clipboard-check"></i> Lihat Penilaian Praktik
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 4. MODEL GURU ================= -->
+    <section id="model-guru">
+        <div class="section-header">
+            <span class="section-badge">Keteladanan & Nilai</span>
+            <h2 class="section-title">Model Guru Teladan</h2>
+            <p class="section-subtitle">Komitmen moral, integritas, dan profil keteladanan sebagai calon pendidik
+                profesional.</p>
+        </div>
+
+        <div class="model-guru-wrapper">
+            <div class="model-guru-img">
+                <img src="assets/images/foto model guru.jpeg" alt="Sosok Model Guru Hudan Ezra'alana Praja">
+            </div>
+            <div class="model-guru-text">
+                <div class="quote-box">
+                    <p class="quote-text">
+                        "Menjadi guru bukan sekadar tentang mentransfer pengetahuan, melainkan tentang menyalakan
+                        lentera semangat dalam sanubari setiap anak bangsa. Saya meyakini setiap peserta didik memiliki
+                        potensi unik dan mulia yang siap mekar ketika dituntun dengan ketulusan hati."
+                    </p>
+                    <div class="quote-author">
+                        — Hudan Ezra'alana Praja, S.Pd
+                    </div>
+                </div>
+
+                <div class="guru-pillars">
+                    <div class="pillar-item">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>Ing Ngarso Sung Tulodo</span>
+                    </div>
+                    <div class="pillar-item">
+                        <i class="fa-solid fa-hands-holding-circle"></i>
+                        <span>Ing Madyo Mangun Karso</span>
+                    </div>
+                    <div class="pillar-item">
+                        <i class="fa-solid fa-seedling"></i>
+                        <span>Tut Wuri Handayani</span>
+                    </div>
+                    <div class="pillar-item">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Humanis & Adaptif</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 5. ANALISIS ================= -->
+    <section id="analisis" class="batik-pattern-light">
+        <div class="section-header">
+            <span class="section-badge">Refleksi Kritis</span>
+            <h2 class="section-title">Analisis Pembelajaran</h2>
+            <p class="section-subtitle">Evaluasi empiris, studi kasus pemecahan masalah kelas, dan praktik baik (Best
+                Practice) selama PPL.</p>
+        </div>
+
+        <div class="analisis-grid">
+            <div class="analisis-card">
+                <div>
+                    <div class="analisis-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3>Analisis Produk Perencanaan Pembelajaran Praktik Mengajar Mandiri</h3>
+                </div>
+                <button class="btn-outline" onclick="openDocModal(
+                        'Analisis Karakteristik Peserta Didik', 
+                        'Rancangan pembelajaran ini menerapkan pendekatan Teaching at the Right Level (TaRL) yang terlihat jelas dari pemetaan profil gaya belajar 28 murid (visual, audio, hingga kinestetik) sebagai dasar diferensiasi, serta penggunaan asesmen diagnostik di awal pembelajaran. Dari sisi Culturally Responsive Teaching (CRT), modul ini sangat relevan dengan latar belakang dan kesekharian murid karena mengangkat isu nasional yang kontekstual dengan lingkungan sosial, yaitu merancang menu Makan Bergizi Gratis (MBG) menggunakan batas anggaran Rp15.000. Penggunaan model Project-Based Learning (PjBL) berbasis STEM dalam perencanaan ini memfasilitasi murid untuk memecahkan masalah gizi nyata di kelas mereka sendiri, menjadikan perencanaan yang adaptif dan bermakna.'
+                    )">
+                    <i class="fa-solid fa-eye"></i> Detail Analisis
+                </button>
+            </div>
+
+            <div class="analisis-card">
+                <div>
+                    <div class="analisis-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3>Analisis Materi Pembelajaran Praktik Mengajar Mandiri</h3>
+                </div>
+                <button class="btn-outline" onclick="openDocModal(
+                        'Analisis Materi Pembelajaran', 
+                        'Materi pembelajaran mencakup zat gizi utama, prinsip “Isi Piringku”, dan simulasi perhitungan anggaran program MBG yang sangat mencerminkan prinsip CRT karena menghubungkan teori sains dengan kenyataan daya beli dan kebiasaan makan lokal. Pendekatan TaRL diterapkan dengan merancang kedalaman materi yang disesuaikan untuk Fase C, di mana murid tidak hanya sekedar menghafal zat gizi, melainkan diajak melakukan analisis kritis melalui angket preferensi lauk-pauk teman sekelasnya. Materi disusun secara bertahap dari pemahaman konsep hingga tahap mencipta (C6) dalam taksonomi Bloom, sehingga menantang keterampilan Higher Order Thinking Skills (HOTS) namun tetap terjangkau oleh tingkat kognitif murid.'
+                    )">
+                    <i class="fa-solid fa-eye"></i> Detail Analisis
+                </button>
+            </div>
+
+            <div class="analisis-card">
+                <div>
+                    <div class="analisis-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <h3>Analisis Media Pembelajaran Praktik Mengajar Mandiri</h3>
+                </div>
+                <button class="btn-outline" onclick="openDocModal(
+                        'Analisis Media Pembelajaran', 
+                        'Media pembelajaran yang digunakan meliputi presentasi PowerPoint, materi barcode atau video YouTube, serta Lembar Kerja Peserta Didik (LKPD) yang mengakomodasi keragaman gaya belajar visual, auditori, dan kinestetik sesuai prinsip TaRL. Gambar-gambar sisa makanan dan contoh menu MBG nyata yang ditampilkan guru berfungsi sebagai pemantik berbasis CRT yang kuat karena memvisualisasikan kondisi nyata di lingkungan murid untuk menumbuhkan empati. LKPD yang dirancang juga memberikan ruang fleksibel bagi murid untuk menyajikan proyek akhir secara kreatif, baik dalam bentuk mading, rangkuman, atau format lainnya, yang mendukung diferensiasi produk.'
+                    )">
+                    <i class="fa-solid fa-eye"></i> Detail Analisis
+                </button>
+            </div>
+
+            <div class="analisis-card">
+                <div>
+                    <div class="analisis-icon"><i class="fa-solid fa-play-circle"></i></div>
+                    <h3>Analisis Video Pelaksanaan Praktik Mengajar Mandiri</h3>
+                </div>
+                <button class="btn-outline" onclick="openDocModal(
+                        'Analisis Video Pembelajaran', 
+                        'Selama PPL Terbimbing, saya mengajar langsung kepada murid dengan dibarengi oleh rekaman video praktik pembelajaran. rekaman video dengan model zoom in dan zoom out untuk merekam segala aktivitas belajar murid dikelas. khusunya merekam ketika momen murid berdiskusi dan melaksanakan proyek Project Based Learning untuk mata pelajaran IPAS di kelas VI SD.'
+                    )">
+                    <i class="fa-solid fa-eye"></i> Detail Analisis
+                </button>
+            </div>
+
+            <div class="analisis-card">
+                <div>
+                    <div class="analisis-icon"><i class="fa-solid fa-school"></i></div>
+                    <h3>Analisis Kegiatan Non Mengajar</h3>
+                </div>
+                <button class="btn-outline" onclick="openDocModal(
+                        'Analisis Kegiatan Non Mengajar', 
+                        'Seluruh kegiatan non-mengajar, mulai dari penyambutan dan penyeberangan murid di pagi hari, pendampingan Pramuka, sholat jamaah, hingga perayaan acara sekolah (Maulid Nabi, Pondok Ramadhan, jalan sehat, lomba 17 Agustus), berfungsi sebagai implementasi langsung pendidikan karakter dan pendekatan Culturally Responsive Teaching (CRT) di luar kelas. Aktivitas komunal ini sangat efektif dalam menciptakan lingkungan sekolah yang inklusif, menanamkan kedisiplinan spiritual, serta memupuk solidaritas dan kemandirian murid untuk mewujudkan nilai-nilai Profil Pelajar Pancasila secara holistik.'
+                    )">
+                    <i class="fa-solid fa-eye"></i> Detail Analisis
+                </button>
+            </div>
+            <div class="analisis-card">
+                <div>
+                    <div class="analisis-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Analisis Instrumen Penilaian</h3>
+                </div>
+                <button class="btn-outline" onclick="openDocModal(
+                        'Analisis Instrumen Penilaian', 
+                        'Instrumen penilaian disusun secara holistik mencakup ranah kognitif melalui pretest dan posttest pilihan ganda berbasis tingkat kognitif C4-C6, ranah psikomotor melalui rubrik penilaian produk LKPD, serta ranah afektif melalui lembar observasi penalaran kritis. Sesuai prinsip TaRL, formatif asesmen dilakukan secara berkesinambungan melalui scaffolding selama proses diskusi kelompok, di mana guru memberikan bantuan pribadi bagi murid yang mengalami kendala tahapan proyek. Elemen CRT terlihat jelas pada soal evaluasi yang menggunakan kasus nyata seperti preferensi makanan kelas dan batasan harga bahan pangan lokal (seperti tempe, sawi, dan ayam), sehingga penilaian benar-benar mengukur kemampuan murid memecahkan masalah dalam konteks keseharian mereka.'
+                    )">
+                    <i class="fa-solid fa-eye"></i> Detail Analisis
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 6. FILOSOFI MENGAJAR ================= -->
+    <section id="filosofi">
+        <div class="section-header">
+            <span class="section-badge">Landasan Filosofis</span>
+            <h2 class="section-title">Filosofi Mengajar</h2>
+            <p class="section-subtitle">Nilai-nilai luhur dan pandangan pedagogis yang menjiwai setiap interaksi
+                mendidik.</p>
+        </div>
+
+        <div class="filosofi-grid">
+            <div class="filosofi-card">
+                <div class="filosofi-number">01</div>
+                <h3>Menuntun Kodrat Siswa</h3>
+                <p>
+                    Mengadopsi pemikiran Ki Hadjar Dewantara bahwa pendidik adalah 'petani' yang menuntun tumbuhnya
+                    benih padi. Guru tidak dapat mengubah padi menjadi jagung, melainkan merawat, memupuk, dan menyirami
+                    agar padi tumbuh menjadi tanaman yang paling unggul.
+                </p>
+            </div>
+
+            <div class="filosofi-card">
+                <div class="filosofi-number">02</div>
+                <h3>Kodrat Alam & Zaman</h3>
+                <p>
+                    Pendidikan harus berakar kuat pada nilai-nilai kearifan lokal Nusantara (kodrat alam), sekaligus
+                    adaptif terhadap perkembangan teknologi dan peradaban global abad ke-21 (kodrat zaman) tanpa
+                    kehilangan jati diri bangsa.
+                </p>
+            </div>
+
+            <div class="filosofi-card">
+                <div class="filosofi-number">03</div>
+                <h3>Pendidikan Berpusat Pada Murid</h3>
+                <p>
+                    Menghamba pada anak dengan ketulusan; menempatkan kebutuhan, kenyamanan psikologis, dan potensi
+                    murid sebagai pusat dari seluruh keputusan pembelajaran di ruang kelas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 7. GALERI ================= -->
+    <section id="galeri" class="batik-pattern-light">
+        <div class="section-header">
+            <span class="section-badge">Dokumentasi Lapangan</span>
+            <h2 class="section-title">Galeri Praktik PPL</h2>
+            <p class="section-subtitle">Momen berharga selama kegiatan belajar mengajar, kolaborasi, dan pembiasaan
+                positif di sekolah.</p>
+        </div>
+
+        <div class="galeri-grid">
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/galeri 1.jpeg', 'Akhir Kegiatan Siklus Terbimbing', 'Foto bersama murid dan guru kelas V')">
+                <img src="assets/images/galeri 1.jpeg" alt="Galeri 1">
+                <div class="galeri-overlay">
+                    <h4>Akhir Kegiatan Siklus Terbimbing</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/galeri 2.jpeg', 'Visiting Dosen Pembimbing dan Guru Pamong', 'Foto bersama DPL dan Guru Pamong')">
+                <img src="assets/images/galeri 2.jpeg" alt="Galeri 2">
+                <div class="galeri-overlay">
+                    <h4>Visiting Dosen Pembimbing dan Guru Pamong</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/foto model guru.jpeg', 'Kegiatan Presentasi Hasil Proyek STEM', 'Foto saat saya menjadi model guru')">
+                <img src="assets/images/foto model guru.jpeg" alt="Kegiatan Presentasi Hasil Proyek STEM">
+                <div class="galeri-overlay">
+                    <h4>Kegiatan Presentasi Proyek</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/galeri 3.jpeg', 'Kegiatan Pengerjaan Posttest', 'Foto saat mengerjakan soal posttest')">
+                <img src="assets/images/galeri 3.jpeg" alt="Kegiatan Pengerjaan Posttest">
+                <div class="galeri-overlay">
+                    <h4>Kegiatan Pengerjaan Posttest</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/galeri 4.jpeg', 'Kegiatan Membantu Piket Menyebrangkan Jalan', 'Foto saat membantu piket menyebrangkan jalan')">
+                <img src="assets/images/galeri 4.jpeg" alt="Kegiatan Membantu Piket Menyebrangkan Jalan">
+                <div class="galeri-overlay">
+                    <h4>Kegiatan Membantu Piket Menyebrangkan Jalan</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/galeri 5.jpeg', 'Proses Penayangan Video Media Pembelajaran', 'Foto saat menonton video media pembelajaran')">
+                <img src="assets/images/galeri 5.jpeg" alt="Proses Penayangan Video Media Pembelajaran">
+                <div class="galeri-overlay">
+                    <h4>Proses Penayangan Video Media Pembelajaran</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/galeri 6.jpeg', 'Peringatan HUT Arema', 'Foto saat memperingati HUT Arema')">
+                <img src="assets/images/galeri 6.jpeg" alt="Peringatan HUT Arema">
+                <div class="galeri-overlay">
+                    <h4>Peringatan HUT Arema</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/galeri 7.jpeg', 'Peringatan HUT RI ke 80 sekaligus SD Dinoyo 1 ke 100', 'Foto saat memperingati HUT RI ke 80 sekaligus SD Dinoyo 1 ke 100')">
+                <img src="assets/images/galeri 7.jpeg" alt="Peringatan HUT RI ke 80 sekaligus SD Dinoyo 1 ke 100">
+                <div class="galeri-overlay">
+                    <h4>Peringatan HUT RI ke 80 sekaligus SD Dinoyo 1 ke 100</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/galeri 8.jpeg', 'Visiting Dosen PPL Mandiri', 'Foto saat Visiting DPL untuk PPL Mandiri')">
+                <img src="assets/images/galeri 8.jpeg" alt="Visiting Dosen PPL Mandiri">
+                <div class="galeri-overlay">
+                    <h4>Visiting Dosen PPL Mandiri</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/galeri 9.jpeg', 'Pengerjaan Asesmen Diagnostik', 'Foto saat mengerjakan asesmen diagnostik')">
+                <img src="assets/images/galeri 9.jpeg" alt="Pengerjaan Asesmen Diagnostik">
+                <div class="galeri-overlay">
+                    <h4>Pengerjaan Asesmen Diagnostik</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/galeri 12.png', 'Observer Pembelajaran Lesson Study', 'Foto observer pembelajaran lesson study')">
+                <img src="assets/images/galeri 12.png" alt="Observer Pembelajaran Lesson Study">
+                <div class="galeri-overlay">
+                    <h4>Observer Pembelajaran Lesson Study</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+            <div class="galeri-item"
+                onclick="openGalleryModal('assets/images/galeri 13.png', 'Kegiatan Penjemputan PPL', 'Foto dokumentasi kegiatan penjemputan PPL')">
+                <img src="assets/images/galeri 13.png" alt="Kegiatan Penjemputan PPL">
+                <div class="galeri-overlay">
+                    <h4>Kegiatan Penjemputan PPL</h4>
+                    <p><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk memperbesar</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 8. KONTAK ================= -->
+    <footer id="kontak" class="batik-pattern">
+        <div class="footer-content">
+            <h2>Mari Terhubung & Berkolaborasi</h2>
+            <p>
+                Terbuka untuk diskusi akademik, berbagi praktik baik pembelajaran, maupun kolaborasi pengembangan
+                pendidikan. Silakan hubungi saya melalui kanal di bawah ini.
+            </p>
+
+            <div class="contact-cards">
+                <a href="mailto:hudanezra@gmail.com" class="contact-badge" id="btn-email">
+                    <i class="fa-solid fa-envelope"></i> Email Saya
+                </a>
+                <a href="https://wa.me/6287780511613" target="_blank" rel="noopener noreferrer" class="contact-badge"
+                    id="btn-wa">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-badge"
+                    id="btn-linkedin">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+                <div class="contact-badge">
+                    <i class="fa-solid fa-location-dot"></i> Malang, Jawa Timur
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2026 @hudanezra</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= MUSIC PLAYER FLOATING ================= -->
+    <div id="music-player">
+        <!-- Music Card -->
+        <div class="music-card" id="music-card">
+            <!-- Header: Now Playing -->
+            <div class="music-card-header">
+                <div class="music-album-art">
+                    <div class="vinyl-spin" id="vinyl-spin">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                </div>
+                <div class="music-track-info">
+                    <div class="music-track-name" id="track-name">Gamelan Jawa Serenity</div>
+                    <div class="music-track-artist" id="track-artist">Instrumental • Relax</div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="music-card-controls">
+                <!-- Progress -->
+                <div class="music-progress-wrap">
+                    <input type="range" class="music-progress-bar" id="progress-bar" min="0" max="100" value="0"
+                        aria-label="Posisi lagu">
+                    <div class="music-time">
+                        <span id="time-current">0:00</span>
+                        <span id="time-total">0:00</span>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="music-btn-row">
+                    <button class="music-btn" id="btn-shuffle" title="Acak" aria-label="Acak">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </button>
+                    <button class="music-btn" id="btn-prev" title="Sebelumnya" aria-label="Lagu Sebelumnya">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </button>
+                    <button class="music-btn play-pause" id="btn-play" title="Play/Pause" aria-label="Play Pause">
+                        <i class="fa-solid fa-play" id="play-icon"></i>
+                    </button>
+                    <button class="music-btn" id="btn-next" title="Selanjutnya" aria-label="Lagu Selanjutnya">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </button>
+                    <button class="music-btn" id="btn-repeat" title="Ulangi" aria-label="Ulangi">
+                        <i class="fa-solid fa-repeat"></i>
+                    </button>
+                </div>
+
+                <!-- Volume -->
+                <div class="music-volume-row">
+                    <i class="fa-solid fa-volume-low"></i>
+                    <input type="range" class="music-volume" id="volume-bar" min="0" max="1" step="0.02" value="0.6"
+                        aria-label="Volume">
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
+            </div>
+
+            <!-- Playlist -->
+            <div class="music-playlist" id="music-playlist-container">
+                <!-- Diisi oleh JS -->
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button class="music-toggle-btn" id="music-toggle" title="Pemutar Musik" aria-label="Buka/Tutup Pemutar Musik">
+            <span class="music-pulse"></span>
+            <i class="fa-solid fa-music" id="music-toggle-icon"></i>
+        </button>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audio-player" preload="auto"></audio>
+
+    <!-- ================= MODAL DIALOG POPUP ================= -->
+    <div id="infoModal" class="modal" onclick="handleBackdropClick(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle"><i class="fa-solid fa-file-circle-check"></i> Judul Dokumen</h3>
+                <button class="modal-close" onclick="closeModal()" aria-label="Tutup"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Konten dinamis diisi JS -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;"
+                    onclick="closeModal()">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // === 1. SMOOTH SCROLLING & ACTIVE LINK SPY ===
+        const sections = document.querySelectorAll('section, footer');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuBtn = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        // Toggle Mobile Menu
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (navMenu.classList.contains('show')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Close mobile menu on click nav link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu) {
+                    navMenu.classList.remove('show');
+                }
+                if (mobileMenuBtn) {
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+
+        // Scrollspy: Highlight current section in Navbar
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const scrollPos = window.pageYOffset + 120; // offset for nav
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // === 2. INTERACTIVE MODAL POPUPS ===
+        const infoModal = document.getElementById('infoModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+
+        function openDocModal(title, description, details) {
+            modalTitle.innerHTML = `<i class="fa-solid fa-file-circle-check" style="color: var(--batik-gold);"></i> ${title}`;
+
+            let detailsHtml = '';
+            if (details && details.length > 0) {
+                detailsHtml = `<ul class="detail-list">` +
+                    details.map(item => `<li><i class="fa-solid fa-check-circle"></i> <span>${item}</span></li>`).join('') +
+                    `</ul>`;
+            }
+
+            modalBody.innerHTML = `
+                <p style="font-size: 1.05rem; font-weight: 500; color: var(--batik-dark);">${description}</p>
+                ${detailsHtml}
+                <div style="margin-top: 1.5rem; padding: 1rem; background: var(--batik-cream); border-radius: 8px; border-left: 4px solid var(--batik-gold);">
+                    <small style="color: var(--text-muted);"><i class="fa-solid fa-circle-info"></i> Dokumen autentik ini telah diperiksa dan disahkan dalam rangkaian Praktik Pengalaman Lapangan (PPL) PPG Calon Guru.</small>
+                </div>
+            `;
+
+            infoModal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openGalleryModal(imgSrc, title, desc) {
+            modalTitle.innerHTML = `<i class="fa-solid fa-image" style="color: var(--batik-gold);"></i> ${title}`;
+            modalBody.innerHTML = `
+                <div class="lightbox-img-wrapper">
+                    <img src="${imgSrc}" alt="${title}">
+                </div>
+                <p style="font-size: 0.98rem; color: #444; text-align: center; margin-top: 0.8rem;">${desc}</p>
+            `;
+            infoModal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            infoModal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleBackdropClick(event) {
+            if (event.target === infoModal) {
+                closeModal();
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && infoModal.classList.contains('show')) {
+                closeModal();
+            }
+        });
+
+        // === 3. AESTHETIC SCROLL REVEAL (Intersection Observer) ===
+        document.addEventListener("DOMContentLoaded", () => {
+            // Setup Reveal Classes dynamically
+            const revealElements = document.querySelectorAll('.card, .stat-card, .profile-img-wrapper, .profile-text, .analisis-card, .filosofi-card, .galeri-item, .section-title, .section-subtitle, .model-guru-img, .model-guru-text');
+            revealElements.forEach((el, index) => {
+                el.classList.add('reveal');
+                // Stagger delay for grids to create domino effect
+                if (el.classList.contains('card') || el.classList.contains('stat-card') || el.classList.contains('analisis-card') || el.classList.contains('galeri-item') || el.classList.contains('filosofi-card')) {
+                    if (index % 3 === 1) el.classList.add('delay-1');
+                    if (index % 3 === 2) el.classList.add('delay-2');
+                }
+            });
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Navbar transparent to solid on scroll
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            // trigger on load
+            if (window.scrollY > 50) header.classList.add('scrolled');
+        });
+    </script>
+
+    <!-- ================= MUSIC PLAYER SCRIPT ================= -->
+    <script>
+        // === PLAYLIST DATA ===
+        // Menggunakan lagu-lagu bebas hak cipta dari berbagai sumber
+        const playlist = [
+            {
+                title: 'Golden Hour',
+                artist: 'Ambient • Emotional',
+                src: 'assets/audio/Golden Hour.mp3',
+                duration: '0:00'
+            },
+            {
+                title: 'Die With A Smile',
+                artist: 'Soft Pop • Ballad',
+                src: 'assets/audio/Die With A Smile.mp3',
+                duration: '0:00'
+            },
+            {
+                title: 'Winners Take It All',
+                artist: 'Piano • Inspirational',
+                src: 'assets/audio/Winners Take It All.mp3',
+                duration: '0:00'
+            }
+        ];
+
+        // === STATE ===
+        let currentTrack = 0;
+        let isPlaying = false;
+        let isShuffled = false;
+        let isRepeating = false;
+        let playerOpen = false;
+
+        // === ELEMENTS ===
+        const audio = document.getElementById('audio-player');
+        const btnPlay = document.getElementById('btn-play');
+        const playIcon = document.getElementById('play-icon');
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNext = document.getElementById('btn-next');
+        const btnShuffle = document.getElementById('btn-shuffle');
+        const btnRepeat = document.getElementById('btn-repeat');
+        const progressBar = document.getElementById('progress-bar');
+        const volumeBar = document.getElementById('volume-bar');
+        const timeCurrent = document.getElementById('time-current');
+        const timeTotal = document.getElementById('time-total');
+        const trackName = document.getElementById('track-name');
+        const trackArtist = document.getElementById('track-artist');
+        const vinylSpin = document.getElementById('vinyl-spin');
+        const musicCard = document.getElementById('music-card');
+        const musicToggleBtn = document.getElementById('music-toggle');
+        const playlistContainer = document.getElementById('music-playlist-container');
+
+        // === FORMAT TIME ===
+        function formatTime(sec) {
+            if (isNaN(sec) || sec < 0) return '0:00';
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return `${m}:${s.toString().padStart(2, '0')}`;
+        }
+
+        // === LOAD TRACK ===
+        function loadTrack(index) {
+            const track = playlist[index];
+            audio.src = track.src;
+            trackName.textContent = track.title;
+            trackArtist.textContent = track.artist;
+            progressBar.value = 0;
+            timeCurrent.textContent = '0:00';
+            timeTotal.textContent = track.duration;
+            updatePlaylistUI();
+        }
+
+        // === PLAY ===
+        function playTrack() {
+            audio.play().then(() => {
+                isPlaying = true;
+                playIcon.className = 'fa-solid fa-pause';
+                vinylSpin.classList.add('playing');
+                musicToggleBtn.classList.add('is-playing');
+            }).catch(err => {
+                console.warn('Autoplay dibatasi browser:', err);
+            });
+        }
+
+        // === PAUSE ===
+        function pauseTrack() {
+            audio.pause();
+            isPlaying = false;
+            playIcon.className = 'fa-solid fa-play';
+            vinylSpin.classList.remove('playing');
+            musicToggleBtn.classList.remove('is-playing');
+        }
+
+        // === PLAY/PAUSE TOGGLE ===
+        btnPlay.addEventListener('click', () => {
+            if (audio.paused || audio.ended) {
+                playTrack();
+            } else {
+                pauseTrack();
+            }
+        });
+
+        // === NEXT TRACK ===
+        function nextTrack() {
+            if (isShuffled) {
+                let rand;
+                do { rand = Math.floor(Math.random() * playlist.length); } while (rand === currentTrack && playlist.length > 1);
+                currentTrack = rand;
+            } else {
+                currentTrack = (currentTrack + 1) % playlist.length;
+            }
+            loadTrack(currentTrack);
+            if (isPlaying) playTrack();
+        }
+
+        // === PREV TRACK ===
+        function prevTrack() {
+            if (audio.currentTime > 3) {
+                audio.currentTime = 0;
+                return;
+            }
+            currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
+            loadTrack(currentTrack);
+            if (isPlaying) playTrack();
+        }
+
+        btnNext.addEventListener('click', nextTrack);
+        btnPrev.addEventListener('click', prevTrack);
+
+        // === SHUFFLE ===
+        btnShuffle.addEventListener('click', () => {
+            isShuffled = !isShuffled;
+            btnShuffle.style.color = isShuffled ? 'var(--batik-gold)' : 'rgba(255,255,255,0.6)';
+        });
+
+        // === REPEAT ===
+        btnRepeat.addEventListener('click', () => {
+            isRepeating = !isRepeating;
+            btnRepeat.style.color = isRepeating ? 'var(--batik-gold)' : 'rgba(255,255,255,0.6)';
+            audio.loop = isRepeating;
+        });
+
+        // === AUDIO EVENTS ===
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const pct = (audio.currentTime / audio.duration) * 100;
+                progressBar.value = pct;
+                timeCurrent.textContent = formatTime(audio.currentTime);
+                timeTotal.textContent = formatTime(audio.duration);
+
+                // Update progress bar fill color
+                progressBar.style.background = `linear-gradient(to right, var(--batik-gold) ${pct}%, rgba(255,255,255,0.12) ${pct}%)`;
+            }
+        });
+
+        audio.addEventListener('ended', () => {
+            if (!isRepeating) nextTrack();
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            timeTotal.textContent = formatTime(audio.duration);
+        });
+
+        // === PROGRESS BAR SEEK ===
+        progressBar.addEventListener('input', () => {
+            if (audio.duration) {
+                audio.currentTime = (progressBar.value / 100) * audio.duration;
+            }
+        });
+
+        // === VOLUME ===
+        audio.volume = parseFloat(volumeBar.value);
+        volumeBar.addEventListener('input', () => {
+            audio.volume = parseFloat(volumeBar.value);
+            // Update volume fill
+            const pct = volumeBar.value * 100;
+            volumeBar.style.background = `linear-gradient(to right, rgba(255,255,255,0.45) ${pct}%, rgba(255,255,255,0.12) ${pct}%)`;
+        });
+        // Init volume bar fill
+        volumeBar.style.background = 'linear-gradient(to right, rgba(255,255,255,0.45) 60%, rgba(255,255,255,0.12) 60%)';
+        progressBar.style.background = 'rgba(255,255,255,0.12)';
+
+        // === BUILD PLAYLIST UI ===
+        function updatePlaylistUI() {
+            playlistContainer.innerHTML = '';
+            playlist.forEach((track, idx) => {
+                const item = document.createElement('div');
+                item.className = 'playlist-item' + (idx === currentTrack ? ' active' : '');
+                item.innerHTML = `
+                    <span class="track-num">${idx === currentTrack ? '<i class="fa-solid fa-volume-high" style="font-size:0.65rem;"></i>' : (idx + 1)}</span>
+                    <div class="track-details">
+                        <div class="track-title">${track.title}</div>
+                    </div>
+                    <span class="track-dur">${track.duration}</span>
+                `;
+                item.addEventListener('click', () => {
+                    currentTrack = idx;
+                    loadTrack(currentTrack);
+                    playTrack();
+                });
+                playlistContainer.appendChild(item);
+            });
+        }
+
+        // === TOGGLE PLAYER OPEN/CLOSE ===
+        musicToggleBtn.addEventListener('click', () => {
+            playerOpen = !playerOpen;
+            if (playerOpen) {
+                musicCard.classList.remove('collapsed');
+            } else {
+                musicCard.classList.add('collapsed');
+            }
+        });
+
+        // === INIT ===
+        musicCard.classList.add('collapsed'); // Start collapsed
+        loadTrack(currentTrack);
+    </script>
+</body>
+
+</html>
